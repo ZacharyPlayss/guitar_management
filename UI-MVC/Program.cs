@@ -35,11 +35,11 @@ builder.Services.AddScoped<IRepository, Repository>();
 builder.Services.AddScoped<IManager, Manager>();
 
 //google sign up/in
-builder.Services.AddAuthentication().AddGoogle(googleOptions =>
+/*builder.Services.AddAuthentication().AddGoogle(googleOptions =>
 {
     googleOptions.ClientId = googleClientId;
     googleOptions.ClientSecret = googleClientSecret;
-});
+});*/
 
 
 builder.Services.ConfigureApplicationCookie (cfg =>
@@ -112,14 +112,14 @@ void SeedIdentity(UserManager<IdentityUser> userManager, RoleManager<IdentityRol
         Email = "admin@guitarmanagement.be",
         EmailConfirmed = true
     };
-    userManager.CreateAsync(user1, "1234");
+    userManager.CreateAsync(user1, "Test1234?");
     var user2 = new IdentityUser
     {
         UserName = "user@guitarmanagement.be",
         Email = "user@guitarmanagement.be",
         EmailConfirmed = true
     };
-    userManager.CreateAsync(user2, "1234");
+    userManager.CreateAsync(user2, "Test1234?");
 
     userManager.AddToRoleAsync(user1, CustomIdentityConstants.AdminRole);
     userManager.AddToRoleAsync(user2, CustomIdentityConstants.UserRole);

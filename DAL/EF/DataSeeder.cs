@@ -41,7 +41,7 @@ public static class DataSeeder
             Manufacturer = manufacturer1,
             Stock = new List<Stock>(),
             Id = 1,
-            ModelOwner = context.Users.Single(user => user.UserName =="zachary@kdg.be")
+            ModelOwner = context.Users.Single(user => user.UserName =="admin@guitarmanagement.be")
         };
         GuitarModel guitar2 = new GuitarModel()
         {
@@ -52,7 +52,7 @@ public static class DataSeeder
             Manufacturer = manufacturer3,
             Stock = new List<Stock>(),
             Id = 2,
-            ModelOwner = context.Users.Single(user => user.UserName =="zachary@kdg.be")
+            ModelOwner = context.Users.Single(user => user.UserName =="admin@guitarmanagement.be")
         };
         GuitarModel guitar3 = new GuitarModel()
         {
@@ -63,7 +63,7 @@ public static class DataSeeder
             Manufacturer = manufacturer3,
             Stock = new List<Stock>(),
             Id = 3,
-            ModelOwner = context.Users.Single(user => user.UserName =="stijn@kdg.be")
+            ModelOwner = context.Users.Single(user => user.UserName =="admin@guitarmanagement.be")
         };
         GuitarModel guitar4 = new GuitarModel()
         {
@@ -74,7 +74,7 @@ public static class DataSeeder
             Manufacturer = manufacturer2,
             Stock = new List<Stock>(),
             Id = 4,
-            ModelOwner = context.Users.Single(user => user.UserName =="lars@kdg.be")
+            ModelOwner = context.Users.Single(user => user.UserName =="user@guitarmanagement.be")
         };
         GuitarModel guitar5 = new GuitarModel()
         {
@@ -85,7 +85,7 @@ public static class DataSeeder
             Manufacturer = manufacturer2,
             Stock = new List<Stock>(),
             Id = 5,
-            ModelOwner = context.Users.Single(user => user.UserName =="lars@kdg.be")
+            ModelOwner = context.Users.Single(user => user.UserName =="user@guitarmanagement.be")
         };
         GuitarModel guitar6 = new GuitarModel()
         {
@@ -96,7 +96,7 @@ public static class DataSeeder
             Manufacturer = manufacturer1,
             Stock = new List<Stock>(),
             Id = 6,
-            ModelOwner = context.Users.Single(user => user.UserName =="zachary@kdg.be")
+            ModelOwner = context.Users.Single(user => user.UserName =="user@guitarmanagement.be")
         };
         GuitarModel guitar7 = new GuitarModel()
         {
@@ -107,7 +107,7 @@ public static class DataSeeder
             Manufacturer = manufacturer2,
             Stock = new List<Stock>(),
             Id = 7,
-            ModelOwner = context.Users.Single(user => user.UserName =="robbe@kdg.be")
+            ModelOwner = context.Users.Single(user => user.UserName =="user@guitarmanagement.be")
         };
         GuitarModel guitar8 = new GuitarModel()
         {
@@ -118,7 +118,7 @@ public static class DataSeeder
             Manufacturer = manufacturer2,
             Stock = new List<Stock>(),
             Id = 8,
-            ModelOwner = context.Users.Single(user => user.UserName =="stijn@kdg.be")
+            ModelOwner = context.Users.Single(user => user.UserName =="admin@guitarmanagement.be")
         };
         //STORE INIT
         Store store1 = new Store()

@@ -44,48 +44,6 @@
         </section>
     </div>
     <div class="col-md-6 col-md-offset-2">
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Email</th>
-                <th scope="col">Passwoord</th>
-                <th scope="col">Rol</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>zachary@kdg.be</td>
-                <td>Test1234.</td>
-                <td>Admin</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>stijn@kdg.be</td>
-                <td>Test1234?</td>
-                <td>User</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>robbe@kdg.be</td>
-                <td>Test123!</td>
-                <td>User</td>
-            </tr>
-            <tr>
-                <th scope="row">4</th>
-                <td>lars@kdg.be</td>
-                <td>Password1!</td>
-                <td>Admin</td>
-            </tr>
-            <tr>
-                <th scope="row">5</th>
-                <td>jef@kdg.be</td>
-                <td>Password2!</td>
-                <td>User</td>
-            </tr>
-            </tbody>
-        </table>
     </div>
     @{
                     if (((Model.ExternalLogins?.Count ?? 0) == 0) ||!HttpContext.Request.IsHttps)
