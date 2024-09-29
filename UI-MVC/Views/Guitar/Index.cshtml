@@ -1,0 +1,33 @@
+﻿@using GuitarManagement.BL.Domain
+@model IEnumerable<GuitarModel>
+
+@{
+    ViewBag.Title = "All Guitar Models";
+    Layout = "_Layout";
+}
+
+<h2>All Guitarmodels</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Stringamount</th>
+        <th>Price</th>
+        <th>Type</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var guitarModel in Model)
+    {
+        <tr>
+            <td>@guitarModel.Name</td>
+            <td>@guitarModel.AmountOfStrings</td>
+            <td>€@guitarModel.Price</td>
+            <td>@guitarModel.Type.ToString().ToLower()</td>
+            <td><a asp-controller="Guitar" asp-action="Details" asp-route-id="@guitarModel.Id">Details</a></td>
+        </tr>
+    }
+    </tbody>
+</table>

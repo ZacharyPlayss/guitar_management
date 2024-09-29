@@ -1,0 +1,9 @@
+﻿### Add Manufacturer - Test
+POST http://localhost:5056/api/Manufacturers
+Content-Type: application/json
+
+{
+  "Name": "Test Manufacturer",
+  "DateFounded": "2023-01-01",
+  "Location": "Test Location"
+}

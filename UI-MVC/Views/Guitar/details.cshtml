@@ -1,0 +1,104 @@
+﻿@using GuitarManagement.BL.Domain
+@using GuitarManagement.UI.MVC
+@using Microsoft.AspNetCore.Identity
+@model GuitarModel
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    ViewBag.Title = "Guitarmodel Details";
+    Layout = "_Layout";
+}
+@{
+    var currentUser = UserManager.GetUserAsync(User).Result;
+}
+
+<h2>Guitarmodel Details</h2>
+
+<section class="mt-3 guitarDetails" data-id="@Model.Id">
+    <div class="row mb-3">
+        <span class="col-sm-2 fw-bold">Name</span>
+        <span class="col-sm-10" id="nameElement">@Model.Name</span>
+    </div>
+    <div class="row mb-3">
+        <span class="col-sm-2 fw-bold"># strings</span>
+        <span class="col-sm-10" id="stringAmountElement">@Model.AmountOfStrings</span>
+    </div>
+    @if ((User.Identity != null 
+         && User.Identity.IsAuthenticated 
+         && @Model.ModelOwner == currentUser)
+         || User.IsInRole(CustomIdentityConstants.AdminRole) 
+        )
+    {
+        <div class="row mb-3">
+            <div class="input-group col-sm-10">
+                <span class="col-sm-2 fw-bold">Price</span>
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">€</span>
+                </div>
+                <input type="number" class="form-control" id="priceElement" value="@Model.Price.ToString().Replace(",", ".")">
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="row mb-3">
+            <span class="col-sm-2 fw-bold" >Price</span>
+            <span class="col-sm-10" id="priceElement">€@Model.Price</span>
+        </div>
+    }
+    <div class="row mb-3">
+        <span class="col-sm-2 fw-bold">Type</span>
+        <span class="col-sm-10" id="priceElement">@Model.Type.ToString().ToLower()</span>
+    </div>
+    @if (User.Identity != null 
+         && User.Identity.IsAuthenticated 
+         && @Model.ModelOwner == currentUser
+         || User.IsInRole(CustomIdentityConstants.AdminRole) 
+        )
+    {
+        <button type="button" class="btn btn-primary updateButton">Update</button> 
+        <p id="updateMessage"></p>
+    }
+    else 
+    {
+        <p class=".text-secondary">Maintained by @Model.ModelOwner.UserName</p>
+    }
+</section>
+<section class="mt-3">
+    <h2>Stores</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Amount</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Location</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+         @foreach (Stock stock in Model.Stock)
+            {
+                <tr>
+                    <td>@stock.Amount</td>
+                    <td>@stock.Store.Name</td>
+                    <td>@stock.Store.Address</td>
+                    <td>@stock.Store.Location</td>
+                    <td><a asp-controller="Store" asp-action="Details" asp-route-id="@stock.Store.Id">Details</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+@section scripts{
+    @{
+            var identityCookieValue = Context.Request.Cookies[".AspNetCore.Identity.Application"];
+        }
+        <script>
+            // Assign the value of the cookie to a JavaScript variable
+            const identityCookieValue = '@identityCookieValue';
+        </script>
+    <script src="@Url.Content("~/js/guitar/index.js")" type="module"></script>
+}

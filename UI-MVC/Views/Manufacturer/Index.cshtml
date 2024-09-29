@@ -1,0 +1,25 @@
+﻿@model System.Collections.Generic.IEnumerable<GuitarManagement.BL.Domain.GuitarModel>
+
+@{
+    ViewBag.Title = "Manufacturers";
+    Layout = "_Layout";
+}
+
+<h2>All manufacturerers</h2>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Date founded</th>
+    </tr>
+    </thead>
+    <tbody id="manufacturerTableBody">
+    
+    </tbody>
+</table>
+<button type="button" class="btn btn-primary" id="refreshButton">Refresh</button>
+@section Scripts
+{
+    <script src="js/manufacturer/index.js" type="module"></script>
+}

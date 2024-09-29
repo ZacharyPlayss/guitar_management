@@ -1,0 +1,21 @@
+# @no-redirect
+# @no-cookie-jar
+### Add Manufacturer - NOT SIGNED IN
+POST http://localhost:5056/api/Manufacturers
+Content-Type: application/json
+
+{
+  "Name": "Test Manufacturer",
+  "DateFounded": "2023-01-01",
+  "Location": "Test Location"
+}
+### Add Manufacturer - SIGNED IN
+POST http://localhost:5056/api/Manufacturers
+Content-Type: application/json
+Cookie: .AspNetCore.Identity.Application=CfDJ8GDXypVCnG9FpYIzBPZA1jCjip1AhB0eo4298MthQHsyo-oDi4wQZ1wMNIGLrRzqE8FeOsImlq9P-AQPYegYDMYdh60ltZ3xlQL2NhLx7aPoCMiJWvrYpBPSTZmqMbySHtNfTRGb7xl0zlCcKfwgq0LRnHbHDkiRFfEC2_bQyG0X8EvP7aXjpgx7VnvM_hu79VrgQVXafHtB8sQsFvBSukO9Y6iHyo6FhJdVlqu7jA_TwdgECCgwRZu5BqovZVgdOZQGkjI-zqGI5i683zVTOagXR1mikwghyeqJQs03thuuudfdl4_xKumSdqHH_HkhBkcTTikmFc84VsF9VKwUYtBgawNAc-AM9P55DjpzLFCoQ-bXf-zwZmz3QsYfuxhMRYGfZaH970wn40Ou0pK4wm34o-vCeE01WSgf7u1gISBjOZZIwvf0DksMnszooeo5e6HfOKXCHsNoXi2zA-CTFfvg8U0SQj3jn2FvGLhNMp4H979MB0iGh2W-K_Q46qE86agkAJpJPXM1Nl8fSl_honMszbtUzCbL03ndUj9tmtV5LgHSYZwd_ryQzJbckvFDMuogzbUz5nbOdBsL5gvAvEpe61hbjTGGObcsAr-ev5qUY3PVv-6y6jB22xTebkZmU-cDCb6Nv1LDNYEhk2H6hxriArU_TwOWqk6LFQj11VYyyJncKiLYcOxYBwrY2ikvpa1izitU6L0CzxkrADtFGVtsMlh-A1e9M2h9ovP1ak3oPM0ZHYcbVtxbYEiZcNrttc9wR6IcjnkbH5IrBHjUx4v6LaB2lDmYgrpzTzAFhq--pH7uMwK1dyDrkhwE2oze0hgnQDWSkWYF0OdqYjvEZXI
+
+{
+  "Name": "Test Manufacturer",
+  "DateFounded": "2023-01-01",
+  "Location": "Test Location"
+}

@@ -1,0 +1,44 @@
+﻿@using GuitarManagement.BL.Domain
+@model GuitarManagement.BL.Domain.GuitarModel
+
+@{
+    ViewBag.Title = "Gitaar toevoegen.";
+    Layout = "_Layout";
+}
+
+<h2>Gitaar model toevoegen</h2>
+
+<form aps-controller="Guitar" asp-action="Add" method="post" class="mt-3">
+    <div class="mb-3 row">
+        <label asp-for="@Model.Name" class="col-sm-2 form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="@Model.Name" class="form-control">
+        </div>
+        <span asp-validation-for="@Model.Name" class="text-danger"></span>
+    </div>
+    <div class="mb-3 row">
+        <label asp-for="@Model.Price" class="col-sm-2 form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="@Model.Price" class="form-control">
+        </div>
+        <span asp-validation-for="@Model.Price" class="text-danger"></span>
+    </div>
+    <div class="mb-3 row">
+        <label asp-for="@Model.AmountOfStrings" class="col-sm-2 form-label">Amount of strings</label>
+        <div class="col-sm-10">
+            <input asp-for="@Model.AmountOfStrings" class="form-control">
+        </div>
+        <span asp-validation-for="@Model.AmountOfStrings" class="text-danger"></span>
+    </div>
+    <div class="mb-3 row">
+        <label asp-for="Type">Guitar Type</label>
+        <select asp-for="Type" asp-items="@(new SelectList(Enum.GetValues<GuitarType>()))" class="form-control">
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial"/>
+}
